@@ -7,11 +7,11 @@ services:
     ports:
       - "32001:32001"
     environment:
-      - PGID=20
-      - PUID=501
+      - PGID=0
+      - PUID=0
       - TZ=America/New_York
     volumes:
-      - /home/pi/sonarr/config:/config
+      - /home/pi/.config/NzbDrone/sonarr/config:/config
       - /home/pi/media_plex/TV\ Shows:/tv
       - /home/pi/media_plex/downloads:/downloads
   radarr:
