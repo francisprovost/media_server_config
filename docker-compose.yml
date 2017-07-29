@@ -12,7 +12,7 @@ services:
       - PUID=0
       - TZ=America/New_York
     volumes:
-      - /home/pi/.config/NzbDrone/sonarr/config:/config
+      - /home/pi/.config/NzbDrone:/config
       - /home/pi/media_plex/TV\ Shows:/tv
       - /home/pi/media_plex/downloads:/downloads
   radarr:
