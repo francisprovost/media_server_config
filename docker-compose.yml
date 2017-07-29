@@ -1,0 +1,43 @@
+version: "3"
+services:
+  sonarr:
+    image: lsioarmhf/sonarr
+    container_name: sonarr
+    restart: always
+    ports:
+      - "32001:32001"
+    environment:
+      - PGID=20
+      - PUID=501
+      - TZ=America/New_York
+    volumes:
+      - /home/pi/sonarr/config:/config
+      - /home/pi/media_plex/TV\ Shows:/tv
+      - /home/pi/media_plex/downloads:/downloads
+  radarr:
+    image: lsioarmhf/radarr
+    container_name: radarr
+    restart: always
+    ports:
+      - "7878:7878"
+    environment:
+      - PGID=20
+      - PUID=501
+      - TZ=America/New_York
+    volumes:
+      - /home/pi/radarr/config:/config
+      - /home/pi/media_plex/movies:/movies
+      - /home/pi/media_plex/downloads:/downloads
+  jackett:
+    image: lsioarmhf/jackett
+    container_name: jackett
+    restart: always
+    ports:
+      - "9117:9117"
+    environment:
+      - PGID=20
+      - PUID=501
+      - TZ=America/New_York
+    volumes:
+      - /home/pi/jackett/config:/config
+      - /home/pi/jackett/downloads:/downloads
