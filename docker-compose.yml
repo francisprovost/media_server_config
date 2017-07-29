@@ -5,6 +5,7 @@ services:
     container_name: sonarr
     restart: always
     ports:
+      - "8989:8989"
       - "32001:32001"
     environment:
       - PGID=0
