@@ -8,8 +8,8 @@ services:
       - "8989:8989"
       - "32001:32001"
     environment:
-      - PGID=0
-      - PUID=0
+      - PGID=1000
+      - PUID=1000
       - TZ=America/New_York
     volumes:
       - /home/pi/.config/NzbDrone:/config
@@ -22,13 +22,13 @@ services:
     ports:
       - "7878:7878"
     environment:
-      - PGID=20
-      - PUID=501
+      - PGID=1000
+      - PUID=1000
       - TZ=America/New_York
     volumes:
       - /home/pi/radarr/config:/config
-      - /home/pi/media_plex/movies:/movies
-      - /home/pi/media_plex/downloads:/downloads
+      - /home/pi/hdd_movies/movies:/movies
+      - /home/pi/hdd_movies/downloads:/downloads
   jackett:
     image: lsioarmhf/jackett
     container_name: jackett
@@ -36,8 +36,8 @@ services:
     ports:
       - "9117:9117"
     environment:
-      - PGID=20
-      - PUID=501
+      - PGID=1000
+      - PUID=1000
       - TZ=America/New_York
     volumes:
       - /home/pi/jackett/config:/config
@@ -49,8 +49,8 @@ services:
     ports:
       - "3579:3579"
     environment:
-      - PGID=20
-      - PUID=501
+      - PGID=1000
+      - PUID=1000
       - TZ=America/New_York
     volumes:
       - /home/pi/ombi/config:/config
